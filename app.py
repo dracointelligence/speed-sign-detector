@@ -14,7 +14,7 @@ if uploaded_file:
 
     # Save image temporarily
     image_path = "temp_image.jpg"
-    image.save(image_path)
+    image.convert("RGB").save(image_path, format="JPEG")
 
     # Load model (make sure 'best.pt' is uploaded to repo root)
     model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=False)
